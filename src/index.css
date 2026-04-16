@@ -3,7 +3,75 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply bg-slate-50 text-slate-900;
+  :root {
+    --ag-violet: #6c3fff;
+    --ag-teal: #00e5b0;
+    --ag-bg: #05050a;
   }
+
+  body {
+    @apply text-slate-200 min-h-[100vh];
+    background-color: var(--ag-bg);
+  }
+
+  h1, h2, h3, h4, .font-syne {
+    font-family: 'Syne', sans-serif;
+  }
+
+  body, button, input, textarea, p, span, .font-dm {
+    font-family: 'DM Sans', sans-serif;
+  }
+}
+
+.ag-grid-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  transform: perspective(600px) rotateX(60deg) translateY(-100px) scale(3);
+  transform-origin: top center;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.6;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%);
+}
+
+.ag-orb-violet {
+  position: fixed;
+  top: -10%; left: -10%;
+  width: 50vw; height: 50vw;
+  background: radial-gradient(circle, rgba(108, 63, 255, 0.18) 0%, rgba(108, 63, 255, 0) 65%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -2;
+}
+
+.ag-orb-teal {
+  position: fixed;
+  bottom: -20%; right: -10%;
+  width: 60vw; height: 60vw;
+  background: radial-gradient(circle, rgba(0, 229, 176, 0.12) 0%, rgba(0, 229, 176, 0) 65%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -2;
+}
+
+.ag-gradient-text {
+  background: linear-gradient(135deg, var(--ag-violet), var(--ag-teal));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ag-gradient-bg {
+  background: linear-gradient(135deg, var(--ag-violet), var(--ag-teal));
+}
+
+.frosted-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }

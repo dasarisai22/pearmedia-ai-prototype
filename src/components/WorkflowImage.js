@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Upload, Search, Palette, Loader2, Sparkles, AlertCircle, Clock } from 'lucide-react';
+import { Upload, Search, Loader2, Sparkles, AlertCircle, Clock } from 'lucide-react';
 import { analyzeImage, generateImage } from '../utils/apiHelpers';
 import ImageCard from './ImageCard';
 
