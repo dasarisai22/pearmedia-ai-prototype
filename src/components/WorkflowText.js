@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Wand2, Image as ImageIcon, Loader2, ArrowRight, Clock } from 'lucide-react';
+import { Wand2, Loader2, Clock } from 'lucide-react';
 import { getEnhancedPrompt, generateImage } from '../utils/apiHelpers';
 import ImageCard from './ImageCard';
 
