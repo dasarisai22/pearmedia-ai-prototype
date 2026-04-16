@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# Pear Media AI Prototype
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a complete, production-ready React web application that fulfills the Pear Media LLC Assignment requirements. It bridges the gap between simple user inputs and advanced AI outputs using two distinct creative workflows.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+### Tab 1: Creative Studio (Text Workflow)
+- **Input:** Provide a simple text idea.
+- **NLP Enhancement:** Google Gemini instantly expands the original idea into a highly descriptive 50-word cinematic prompt including lighting, camera angles, and artistic style.
+- **Approval:** A human-in-the-loop step to review and edit the generated prompt.
+- **Image Generation:** Connects to Hugging Face Inference API (Stable Diffusion XL) to render a stunning masterpiece.
 
-### `npm start`
+### Tab 2: Style Lab (Image Workflow)
+- **Upload & Reverse Engineer:** Load a local image and send the Base64 data to Gemini Vision.
+- **Analysis:** Automatically extracts structured visual metadata (Main Objects, Artistic Style, Color Palette, Lighting).
+- **Variations Generation:** Magically constructs new, stylized prompts based on the extracted metadata and generates multiple stunning variations simultaneously.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 🎨 Clean UI & UX
+- Modern, clean aesthetic utilizing Tailwind CSS.
+- Interactive components with subtle micro-animations (`hover`, `scale`, `opacity`).
+- Loading states and resilient error handling for seamless experiences.
+- Full features like Copy Prompt to clipboard and one-click Image Downloads.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠 Tech Stack
 
-### `npm test`
+- **Frontend:** React.js (Create React App), completely functional without Redux.
+- **Styling:** Tailwind CSS + Lucide React (Icons).
+- **APIs:** 
+  - Text & Vision Analysis: [Google Gemini 1.5 Flash](https://aistudio.google.com/) (Handles both Multimodal and NLP via generic fetch).
+  - Image Generation: [Hugging Face Serverless Inference API](https://huggingface.co/) (Stable Diffusion XL).
+  
+## ⚙️ Setup Instructions
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-username/pearmedia-ai-prototype.git
+cd pearmedia-ai-prototype
+```
 
-### `npm run build`
+### 2. Install Dependencies
+Make sure you have Node (v18+) installed.
+```bash
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3. Environment Variables setup
+You will need free API keys from [Google AI Studio](https://aistudio.google.com/) and [Hugging Face](https://huggingface.co/settings/tokens).
+Create a `.env` file in the root of your project directory (in the same folder as `package.json`).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+REACT_APP_GEMINI_KEY=your_gemini_api_key_here
+REACT_APP_HUGGINGFACE_KEY=your_huggingface_api_key_here
+```
+> **Note**: The `.env` file is included in `.gitignore` by default. Do not expose your literal keys to GitHub.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 4. Run Locally
+```bash
+npm start
+```
+The application will launch on [http://localhost:3000](http://localhost:3000).
 
-### `npm run eject`
+## 🌍 Deployment Steps (Vercel)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Commit all code and push to your GitHub repository.
+2. Go to [Vercel](https://vercel.com/) and log in with GitHub.
+3. Click **Add New** > **Project** and select your `pearmedia-ai-prototype` repository.
+4. Open the **Environment Variables** tab before deploying and add:
+   - `REACT_APP_GEMINI_KEY` -> `<your_key>`
+   - `REACT_APP_HUGGINGFACE_KEY` -> `<your_key>`
+5. Click **Deploy**. Vercel will automatically build the `Create React App` and deploy it perfectly!
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📸 Screenshots
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+*(Placeholders - replace these with real screenshots of your running app)*
+- **Creative Studio View:** `![Creative Studio](https://via.placeholder.com/800x400.png?text=Creative+Studio+Screenshot)`
+- **Generated Image View:** `![Generated Image](https://via.placeholder.com/800x400.png?text=Generated+Image+Screenshot)`
+- **Style Lab Upload:** `![Style Lab](https://via.placeholder.com/800x400.png?text=Style+Lab+Screenshot)`
+- **Extracted Metadata:** `![Vision Flow](https://via.placeholder.com/800x400.png?text=Vision+Metadata+Screenshot)`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🎯 Author
+Built for Pear Media Assignment Sprint.
